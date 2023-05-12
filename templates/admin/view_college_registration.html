@@ -1,0 +1,44 @@
+<!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">-->
+<!--<html xmlns="http://www.w3.org/1999/xhtml">-->
+<!--<head>-->
+<!--<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />-->
+<!--<title>Untitled Document</title>-->
+<!--</head>-->
+
+{% extends 'admin/index.html' %}
+{% block body %}
+<body>
+<h2>view college registration</h2>
+<form id="form1" name="form1" method="post" action="">
+  <table class="table table-bordered"  height="89" border="1">
+    <tr>
+      <td >SL-no</td>
+      <td >college Name</td>
+      <td >Phone</td>
+      <td >E-mail</td>
+      <td >Place</td>
+      <td >District</td>
+      <td >pin</td>
+      <td >post</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+    {% for i in data %}
+    <tr>
+      <td>{{forloop.counter}}</td>
+      <td>{{ i.college_name}}</td>
+      <td>{{i.phone}}</td>
+      <td>{{ i.email}}</td>
+      <td>{{i.place}}</td>
+      <td>{{i.district}}</td>
+      <td>{{i.pin}}</td>
+      <td>{{i.post}}</td>
+      <td><a href="/app/Edit_college_registration/ {{ i.id }} #main" class="btn btn-success">Edit</a></td>
+      <td><a href="/app/delete_college_registration/ {{ i.id }} #main" class="btn btn-danger">Delete</a></td>
+    </tr>
+    {% endfor %}
+  </table>
+
+</form>
+</body>
+{% endblock %}

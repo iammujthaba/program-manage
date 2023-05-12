@@ -1,0 +1,49 @@
+<!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">-->
+<!--<html xmlns="http://www.w3.org/1999/xhtml">-->
+<!--<head>-->
+<!--<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />-->
+<!--<title>Untitled Document</title>-->
+<!--</head>-->
+
+{% extends 'college/college_index.html' %}
+{% block body %}
+<body>
+<form action="/app/Appeals_post/" method="post">
+    <table class="table table-bordered" width="200" border="1">
+    {% csrf_token %}
+  <tr>
+  </tr>
+  <tr>
+    <td>program name</td>
+    <td><select class="form-control" name="program_name" required>
+
+        {% for i in data %}
+        <option value="{{ i.id }}"> {{ i.event }}</option>
+        {% endfor %}
+
+      </select></td>
+  </tr>
+  <tr>
+    <td>candidate name</td>
+    <td><select class="form-control" name="candidate_name" required>
+
+        {% for i in d %}
+        <option  value="{{ i.id }}"> {{ i.name }}</option>
+        {% endfor %}
+
+      </select></td>
+  </tr>
+  <tr>
+    <td>appeal</td>
+    <td><textarea class="form-control" name="textarea" id="textarea" cols="45" rows="5" required></textarea></td>
+  </tr>
+    <tr>
+    <td colspan="2"><div align="center">
+      <input type="submit" class="btn btn-primary" name="program_submit" id="program_submit" value="Submit" />
+    </div></td>
+    </tr>
+</table>
+</form>
+</body>
+{% endblock %}
+<!--</html>-->

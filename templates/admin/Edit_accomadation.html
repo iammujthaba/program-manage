@@ -1,0 +1,42 @@
+<!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">-->
+<!--<html xmlns="http://www.w3.org/1999/xhtml">-->
+<!--<head>-->
+<!--<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />-->
+<!--<title>LOGIN</title>-->
+<!--</head>-->
+
+{% extends 'admin/index.html' %}
+{% block body %}
+<body>
+<h2>Edit accomadation</h2>
+<form action="/app/edit_accomodationpost/" method="post" enctype="multipart/form-data">
+ {% csrf_token %}
+  <table class="table table-bordered" width="279" border="1">
+  <tr>
+    <td width="89">building name</td>
+    <td width="174"><input class="form-control" type="text" value="{{ data.bulding_name }}" name="textfield5" id="textfield5" required/></td>
+  </tr>
+  <tr>
+    <td>place</td>
+    <td><input class="form-control" type="text" name="textfield4" value="{{ data.place }}" id="textfield4" required/></td>
+  </tr>
+
+  <tr>
+    <td>land mark</td>
+    <td><input class="form-control" type="text" name="textfield2" value="{{ data.land_mark }}" id="textfield2" required/></td>
+  </tr>
+  <tr>
+    <td height="23">room no</td>
+    <td><input class="form-control" type="text" name="textfield" value="{{ data.room_no }}" id="textfield" required/></td>
+  </tr>
+  <tr>
+    <td colspan="2"><div align="center">
+      <input class="btn btn-primary" type="submit" name="button" id="button" value="Done" />
+    </div></td>
+    </tr>
+</table>
+
+</form>
+</body>
+{% endblock %}
+<!--</html>-->

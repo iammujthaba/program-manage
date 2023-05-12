@@ -1,0 +1,51 @@
+<!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">-->
+<!--<html xmlns="http://www.w3.org/1999/xhtml">-->
+<!--<head>-->
+<!--<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />-->
+<!--<title>Untitled Document</title>-->
+<!--</head>-->
+
+{% extends 'college/college_index.html' %}
+{% block body %}
+<body>
+<form id="form1" name="form1" method="get" action="">
+  <table class="table table-bordered" width="200" border="1">
+
+    <tr>
+      <td>Name</td>
+      <td>{{i.college_name}}</td>
+    </tr>
+    <tr>
+      <td>Email</td>
+      <td>{{i.email}}</td>
+    </tr>
+    <tr>
+      <td>place</td>
+      <td>&nbsp;{{i.place}}</td>
+    </tr>
+    <tr>
+      <td>post</td>
+      <td>&nbsp;{{i.post}}</td>
+    </tr>
+    <tr>
+      <td>phone</td>
+      <td>&nbsp;{{i.phone}}</td>
+    </tr>
+    <tr>
+      <td>pin</td>
+      <td>&nbsp;{{i.pin}}</td>
+    </tr>
+    <tr>
+      <td>district</td>
+      <td>&nbsp;{{i.district}}</td>
+    </tr>
+{#    <tr>#}
+{#      <td>LOGIN</td>#}
+{#      <td>&nbsp;{{i.LOGIN}}</td>#}
+{#    </tr>#}
+
+  </table>
+</form>
+</body>
+{% endblock %}
+<!--</html>-->

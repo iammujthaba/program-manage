@@ -1,0 +1,61 @@
+<!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">-->
+<!--<html xmlns="http://www.w3.org/1999/xhtml">-->
+<!--<head>-->
+<!--<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />-->
+<!--<title>Untitled Document</title>-->
+<!--</head>-->
+
+{% extends 'admin/index.html' %}
+{% block body %}
+<body>
+<h1>program scheduling</h1>
+<form action="/app/program_schedulingpost/" method="post">
+  {% csrf_token %}
+<table class="table table-bordered" width="272" border="1">
+  <tr>
+    <td width="171">Program name</td>
+    <td width="85">
+      <select class="form-control" name="program_name" required>
+
+        {% for i in data %}
+
+        <option value="{{ i.id }}"> {{ i.event }}</option>
+
+        {% endfor %}
+
+
+      </select>
+    </td>
+  </tr>
+  <tr>
+    <td>date</td>
+    <td><label for="date"></label>
+      <input class="form-control" type="date" name="date" id="date" required/></td>
+  </tr>
+  <tr>
+    <td>time from</td>
+    <td><label for="time_from"></label>
+      <input class="form-control" type="time" name="time_from" id="time_from" required/></td>
+  </tr>
+  <tr>
+    <td>time to</td>
+    <td><label for="time_to"></label>
+      <input class="form-control" type="time" name="time_to" id="time_to" required/></td>
+  </tr>
+  <tr>
+    <td>Venue</td>
+    <td><label for="Venue"></label>
+      <input class="form-control" type="text" name="Venue1" id="Venue" required/></td>
+  </tr>
+  <tr>
+    <td colspan="2"><div align="center">
+      <input class="btn btn-primary" type="submit" name="program_submit" id="program_submit" value="Submit" />
+    </div></td>
+    </tr>
+</table>
+
+
+</form>
+</body>
+{% endblock %}
+<!--</html>-->

@@ -1,0 +1,33 @@
+<!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">-->
+<!--<html xmlns="http://www.w3.org/1999/xhtml">-->
+<!--<head>-->
+<!--<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />-->
+<!--<title>Untitled Document</title>-->
+<!--</head>-->
+
+{% extends 'college/college_index.html' %}
+{% block body %}
+<body>
+<h2>view shedule</h2>
+<form id="form1" name="form1" method="post" action="">
+  <table class="table table-bordered" width="200" border="1">
+  <tr>
+    <td>program</td>
+    <td>date</td>
+    <td>time</td>
+    <td>venue</td>
+  </tr>
+  {% for i in data %}
+  <tr>
+    <td>&nbsp;{{i.PROGRAM.event}}</td>
+    <td>&nbsp;{{i.date}}</td>
+    <td>&nbsp;{{i.time_from}}</td>
+    <td>&nbsp;{{i.venue}}</td>
+  </tr>
+  {% endfor %}
+</table>
+
+</form>
+</body>
+{% endblock %}
+<!--</html>-->

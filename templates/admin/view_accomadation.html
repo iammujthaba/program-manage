@@ -1,0 +1,40 @@
+<!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">-->
+<!--<html xmlns="http://www.w3.org/1999/xhtml">-->
+<!--<head>-->
+<!--<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />-->
+<!--<title>Untitled Document</title>-->
+<!--</head>-->
+
+{% extends 'admin/index.html' %}
+{% block body %}
+<body>
+<h2>view accommodation</h2>
+<form id="form1" name="form1" method="post" action="">
+  <table class="table table-bordered"  height="89" border="1">
+    <tr>
+      <td >SL-no</td>
+      <td >Building Name</td>
+      <td >Place</td>
+      <td >Land mark</td>
+      <td >Room no</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+    {% for i in data %}
+    <tr>
+      <td>{{forloop.counter}}</td>
+      <td>{{i.bulding_name}}</td>
+      <td>{{i.place}}</td>
+      <td>{{i.land_mark}}</td>
+      <td>{{i.room_no}}</td>
+      <td><a href="/app/Edit_accommodation/{{ i.id }} #main" class="btn btn-success">Edit</a></td>
+      <td><a href="/app/delete_accomadation/{{ i.id }} #main" class="btn btn-danger" onclick="return confirm('Are You Sure?')">Delete</a></td>
+    </tr>
+    {% endfor %}
+  </table>
+
+</form>
+</body>
+{% endblock %}
+<!--</html>-->
+

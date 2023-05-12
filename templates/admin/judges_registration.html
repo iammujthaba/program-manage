@@ -1,0 +1,60 @@
+<!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">-->
+<!--<html xmlns="http://www.w3.org/1999/xhtml">-->
+<!--<head>-->
+<!--<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />-->
+<!--<title>Untitled Document</title>-->
+<!--</head>-->
+
+{% extends 'admin/index.html' %}
+{% block body %}
+<body>
+<h1>judge registration</h1>
+<form action="/app/judgepost/" method="post" enctype="multipart/form-data">
+  {% csrf_token %}
+<table class="table table-bordered" width="200" border="1">
+  <tr>
+    <td>judge name</td>
+    <td><label for="judge_name"></label>
+      <input class="form-control" type="text" name="judge_name" id="judge_name" required/></td>
+  </tr>
+  <tr>
+    <td>photo</td>
+    <td><input class="form-control" type="file" name="fileField" id="fileField" required/></td>
+  </tr>
+  <tr>
+    <td>phone</td>
+    <td><input class="form-control" type="number" name="textfield" id="textfield" required/></td>
+  </tr>
+  <tr>
+    <td>email</td>
+    <td><input class="form-control" type="email" name="textfield2" id="textfield2" required/></td>
+  </tr>
+  <tr>
+    <td>place</td>
+    <td><input class="form-control" type="text" name="textfield3" id="textfield3" required/></td>
+  </tr>
+  <tr>
+    <td>post</td>
+    <td><input class="form-control" type="text" name="textfield4" id="textfield4" required/></td>
+  </tr>
+  <tr>
+    <td>district</td>
+    <td><input class="form-control" type="text" name="textfield5" id="textfield5" required/></td>
+  </tr>
+  <tr>
+    <td>pincode</td>
+    <td><input class="form-control" type="number" name="textfield6" id="textfield6" required/></td>
+  </tr>
+  <tr>
+    <td colspan="2"><div align="center">
+      <input class="btn btn-primary" type="submit" name="judge_submit" id="judge_submit" value="Submit" />
+    </div></td>
+    </tr>
+</table>
+
+
+
+</form>
+</body>
+{% endblock %}
+<!--</html>-->

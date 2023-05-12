@@ -1,0 +1,77 @@
+<!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">-->
+<!--<html xmlns="http://www.w3.org/1999/xhtml">-->
+<!--<head>-->
+<!--<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />-->
+<!--<title>LOGIN</title>-->
+<!--</head>-->
+
+{% extends 'college/college_index.html' %}
+{% block body %}
+<body>
+<h2>candidate registratiopn</h2>
+<form action="/app/candidate_registration_post/" method="post" enctype="multipart/form-data">
+{% csrf_token %}
+<table class="table table-bordered" width="331" border="1">
+  <tr>
+    <td width="97"> name</td>
+    <td width="218">
+      <input class="form-control" type="text" name="textfield" id="textfield" required/></td>
+  </tr>
+  <tr>
+    <td>photo</td>
+    <td><input class="form-control" type="file" name="fileField" id="fileField" required/></td>
+  </tr>
+    <tr>
+    <td>gender</td>
+    <td><input class="form-control" type="text" name="textfield10" id="textfield10" required/></td>
+  </tr>
+  <tr>
+    <td>phone</td>
+    <td><input  class="form-control" type="number" pattern="{10}" name="textfield2" id="textfield2" required/></td>
+  </tr>
+  <tr>
+    <td>email</td>
+    <td><input class="form-control" type="email" name="textfield3" id="textfield3" required/></td>
+  </tr>
+  <tr>
+    <td>place</td>
+    <td><input class="form-control" type="text" name="textfield4" id="textfield4" required/></td>
+  </tr>
+  <tr>
+    <td>post</td>
+    <td><input class="form-control" type="text" name="textfield5" id="textfield5" required/></td>
+  </tr>
+  <tr>
+    <td>district</td>
+    <td><input class="form-control" type="text" name="textfield6" id="textfield6" required/></td>
+  </tr>
+  <tr>
+    <td>pincode</td>
+    <td><input class="form-control" type="numder" pattern="{6}" name="textfield7" id="textfield7" required/></td>
+  </tr>
+  <tr>
+    <td>program</td>
+      <td><select class="form-control" name="textfield8" id="textfield8" required >
+          {% for i in data %}
+          <option value="{{ i.id }}">{{ i.event }}</option>
+          {% endfor %}
+      </select></td>
+  </tr>
+  <tr>
+    <td>college id</td>
+    <td><select class="form-control" name="textfield9" id="textfield9" required >
+          {% for i in val %}
+          <option value="{{ i.id }}">{{ i.college_name }}</option>
+          {% endfor %}
+      </select></td>
+  </tr>
+  <tr>
+    <td colspan="2"><div align="center">
+      <input type="submit" class="btn btn-primary" name="button" id="button" value="Submit" />
+    </div></td>
+    </tr>
+</table>
+</form>
+</body>
+{% endblock %}
+<!--</html>-->

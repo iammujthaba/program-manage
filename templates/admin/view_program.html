@@ -1,0 +1,38 @@
+<!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">-->
+<!--<html xmlns="http://www.w3.org/1999/xhtml">-->
+<!--<head>-->
+<!--<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />-->
+<!--<title>LOGIN</title>-->
+<!--</head>-->
+
+{% extends 'admin/index.html' %}
+{% block body %}
+<body>
+<h2>program</h2>
+<form action="" method="get" enctype="multipart/form-data">
+<table class="table table-bordered" width="200" border="1">
+  <tr>
+    <td>s_no</td>
+    <td>event</td>
+    <td>section</td>
+    <td>category</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+
+  {% for i in data %}
+  <tr>
+    <td> {{ forloop.counter }}&nbsp;</td>
+    <td>&nbsp;{{ i.event  }}</td>
+    <td>{{ i.section  }}</td>
+    <td>{{ i.category  }}</td>
+    <td><a href="/app/Edit_program_manage/{{ i.id }} #main" class="btn btn-success">Edit</a></td>
+    <td><a href="/app/delete_program_manage/{{i.id}} #main" class="btn btn-danger">Delete</a></td>
+  </tr>
+  {% endfor %}
+</table>
+
+</form>
+</body>
+{% endblock %}
+<!--</html>-->

@@ -1,0 +1,39 @@
+<!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">-->
+<!--<html xmlns="http://www.w3.org/1999/xhtml">-->
+<!--<head>-->
+<!--<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />-->
+<!--<title>Untitled Document</title>-->
+<!--</head>-->
+
+{% extends 'admin/index.html' %}
+{% block body %}
+<body>
+<h2>view program schedule</h2>
+<form action="" method="get">
+<table class="table table-bordered" width="494" height="55" border="1">
+  <tr>
+    <td>Date</td>
+    <td> Program </td>
+    <td>Time from</td>
+    <td>Time to</td>
+    <td>Venue</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  {% for i in data %}
+  <tr>
+    <td>&nbsp;{{i.date}}</td>
+    <td> {{i.PROGRAM.event}}</td>
+    <td> {{i.time_from}}</td>
+    <td>&nbsp;{{i.time_to}}</td>
+    <td>&nbsp;{{i.venue}}</td>
+    <td><a href="/app/Edit_program_schedule/{{ i.id }} #main" class="btn btn-success">Edit</a></td>
+    <td><a href="/app/delete_program_schedule/{{i.id}} #main" class="btn btn-danger">delete</a></td>
+  </tr>
+  {% endfor %}
+</table>
+
+</form>
+</body>
+{% endblock %}
+<!--</html>-->
